@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="ecf4263da71d4f1b955362beda0a0e25" Name="Diagram1" ZoomLevel="46" >
+        <EntityTypeShape EntityType="ModeloDados.Event" Width="1.5" PointX="13.375" PointY="3" />
+        <EntityTypeShape EntityType="ModeloDados.Battle" Width="1.5" PointX="10.75" PointY="2.75" />
+        <AssociationConnector Association="ModeloDados.EventBattle" />
+        <EntityTypeShape EntityType="ModeloDados.Artist" Width="1.5" PointX="6.125" PointY="3.5" />
+        <EntityTypeShape EntityType="ModeloDados.Artist_has_Competition" Width="1.5" PointX="8.125" PointY="1" />
+        <AssociationConnector Association="ModeloDados.ArtistArtist_has_Competition" />
+        <AssociationConnector Association="ModeloDados.BattleArtist_has_Competition" />
+        <EntityTypeShape EntityType="ModeloDados.Member" Width="1.5" PointX="6.125" PointY="6.5" />
+        <AssociationConnector Association="ModeloDados.ArtistMember" />
+        <EntityTypeShape EntityType="ModeloDados.Instrument" Width="1.5" PointX="2.25" PointY="4.25" />
+        <EntityTypeShape EntityType="ModeloDados.Music" Width="1.5" PointX="2.375" PointY="0.75" />
+        <EntityTypeShape EntityType="ModeloDados.Artist_has_Music" Width="1.5" PointX="5.375" PointY="1" />
+        <AssociationConnector Association="ModeloDados.ArtistArtist_has_Music" />
+        <AssociationConnector Association="ModeloDados.MusicArtist_has_Music" />
+        <AssociationConnector Association="ModeloDados.MusicInstrument" />
+        <AssociationConnector Association="ModeloDados.MemberInstrument" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

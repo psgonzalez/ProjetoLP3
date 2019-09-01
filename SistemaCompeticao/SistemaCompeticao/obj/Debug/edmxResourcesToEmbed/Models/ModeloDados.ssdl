@@ -1,0 +1,210 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="ModeloDados.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2012" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityContainer Name="ModeloDadosStoreContainer">
+    <EntitySet Name="Event" EntityType="ModeloDados.Store.Event" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Battle" EntityType="ModeloDados.Store.Battle" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Artist" EntityType="ModeloDados.Store.Artist" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Artist_has_Competition" EntityType="ModeloDados.Store.Artist_has_Competition" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Member" EntityType="ModeloDados.Store.Member" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Instrument" EntityType="ModeloDados.Store.Instrument" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Music" EntityType="ModeloDados.Store.Music" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Artist_has_Music" EntityType="ModeloDados.Store.Artist_has_Music" store:Type="Tables" Schema="dbo" />
+    <AssociationSet Name="EventBattle" Association="ModeloDados.Store.EventBattle">
+      <End Role="Event" EntitySet="Event" />
+      <End Role="Battle" EntitySet="Battle" />
+    </AssociationSet>
+    <AssociationSet Name="ArtistArtist_has_Competition" Association="ModeloDados.Store.ArtistArtist_has_Competition">
+      <End Role="Artist" EntitySet="Artist" />
+      <End Role="Artist_has_Competition" EntitySet="Artist_has_Competition" />
+    </AssociationSet>
+    <AssociationSet Name="BattleArtist_has_Competition" Association="ModeloDados.Store.BattleArtist_has_Competition">
+      <End Role="Battle" EntitySet="Battle" />
+      <End Role="Artist_has_Competition" EntitySet="Artist_has_Competition" />
+    </AssociationSet>
+    <AssociationSet Name="ArtistMember" Association="ModeloDados.Store.ArtistMember">
+      <End Role="Artist" EntitySet="Artist" />
+      <End Role="Member" EntitySet="Member" />
+    </AssociationSet>
+    <AssociationSet Name="ArtistArtist_has_Music" Association="ModeloDados.Store.ArtistArtist_has_Music">
+      <End Role="Artist" EntitySet="Artist" />
+      <End Role="Artist_has_Music" EntitySet="Artist_has_Music" />
+    </AssociationSet>
+    <AssociationSet Name="MusicArtist_has_Music" Association="ModeloDados.Store.MusicArtist_has_Music">
+      <End Role="Music" EntitySet="Music" />
+      <End Role="Artist_has_Music" EntitySet="Artist_has_Music" />
+    </AssociationSet>
+    <AssociationSet Name="MusicInstrument" Association="ModeloDados.Store.MusicInstrument">
+      <End Role="Music" EntitySet="Music" />
+      <End Role="Instrument" EntitySet="Instrument" />
+    </AssociationSet>
+    <AssociationSet Name="MemberInstrument" Association="ModeloDados.Store.MemberInstrument">
+      <End Role="Member" EntitySet="Member" />
+      <End Role="Instrument" EntitySet="Instrument" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="Event">
+    <Key>
+      <PropertyRef Name="idEvent" />
+    </Key>
+    <Property Name="idEvent" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="EventDate" Type="datetime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Battle">
+    <Key>
+      <PropertyRef Name="idBattle" />
+    </Key>
+    <Property Name="idBattle" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="BattleHour" Type="time" Nullable="false" />
+    <Property Name="Event_idEvent" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Artist">
+    <Key>
+      <PropertyRef Name="idArtist" />
+    </Key>
+    <Property Name="idArtist" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="FormationYear" Type="nvarchar(max)" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Artist_has_Competition">
+    <Key>
+      <PropertyRef Name="idArtist_has_Competition" />
+    </Key>
+    <Property Name="Artist_idArtist" Type="int" Nullable="false" />
+    <Property Name="Battle_idBattle" Type="int" Nullable="false" />
+    <Property Name="idArtist_has_Competition" Type="nvarchar(max)" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Member">
+    <Key>
+      <PropertyRef Name="idMember" />
+    </Key>
+    <Property Name="idMember" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="CPF" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="BirthDate" Type="datetime" Nullable="false" />
+    <Property Name="Artist_idArtist" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Instrument">
+    <Key>
+      <PropertyRef Name="idInstrument" />
+    </Key>
+    <Property Name="idInstrument" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="InstrumentType" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Music_idMusic" Type="int" Nullable="false" />
+    <Property Name="Member_idMember" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Music">
+    <Key>
+      <PropertyRef Name="idMusic" />
+    </Key>
+    <Property Name="idMusic" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Title" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="MusicLength" Type="time" Nullable="false" />
+    <Property Name="Genre" Type="nvarchar(max)" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Artist_has_Music">
+    <Key>
+      <PropertyRef Name="idArtist_has_Music" />
+    </Key>
+    <Property Name="Artist_idArtist" Type="int" Nullable="false" />
+    <Property Name="Music_idMusic" Type="int" Nullable="false" />
+    <Property Name="idArtist_has_Music" Type="nvarchar(max)" Nullable="false" />
+  </EntityType>
+  <Association Name="EventBattle">
+    <End Role="Event" Type="ModeloDados.Store.Event" Multiplicity="1" />
+    <End Role="Battle" Type="ModeloDados.Store.Battle" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Event">
+        <PropertyRef Name="idEvent" />
+      </Principal>
+      <Dependent Role="Battle">
+        <PropertyRef Name="Event_idEvent" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="ArtistArtist_has_Competition">
+    <End Role="Artist" Type="ModeloDados.Store.Artist" Multiplicity="1" />
+    <End Role="Artist_has_Competition" Type="ModeloDados.Store.Artist_has_Competition" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Artist">
+        <PropertyRef Name="idArtist" />
+      </Principal>
+      <Dependent Role="Artist_has_Competition">
+        <PropertyRef Name="Artist_idArtist" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="BattleArtist_has_Competition">
+    <End Role="Battle" Type="ModeloDados.Store.Battle" Multiplicity="1" />
+    <End Role="Artist_has_Competition" Type="ModeloDados.Store.Artist_has_Competition" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Battle">
+        <PropertyRef Name="idBattle" />
+      </Principal>
+      <Dependent Role="Artist_has_Competition">
+        <PropertyRef Name="Battle_idBattle" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="ArtistMember">
+    <End Role="Artist" Type="ModeloDados.Store.Artist" Multiplicity="1" />
+    <End Role="Member" Type="ModeloDados.Store.Member" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Artist">
+        <PropertyRef Name="idArtist" />
+      </Principal>
+      <Dependent Role="Member">
+        <PropertyRef Name="Artist_idArtist" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="ArtistArtist_has_Music">
+    <End Role="Artist" Type="ModeloDados.Store.Artist" Multiplicity="1" />
+    <End Role="Artist_has_Music" Type="ModeloDados.Store.Artist_has_Music" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Artist">
+        <PropertyRef Name="idArtist" />
+      </Principal>
+      <Dependent Role="Artist_has_Music">
+        <PropertyRef Name="Artist_idArtist" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="MusicArtist_has_Music">
+    <End Role="Music" Type="ModeloDados.Store.Music" Multiplicity="1" />
+    <End Role="Artist_has_Music" Type="ModeloDados.Store.Artist_has_Music" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Music">
+        <PropertyRef Name="idMusic" />
+      </Principal>
+      <Dependent Role="Artist_has_Music">
+        <PropertyRef Name="Music_idMusic" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="MusicInstrument">
+    <End Role="Music" Type="ModeloDados.Store.Music" Multiplicity="1" />
+    <End Role="Instrument" Type="ModeloDados.Store.Instrument" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Music">
+        <PropertyRef Name="idMusic" />
+      </Principal>
+      <Dependent Role="Instrument">
+        <PropertyRef Name="Music_idMusic" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="MemberInstrument">
+    <End Role="Member" Type="ModeloDados.Store.Member" Multiplicity="1" />
+    <End Role="Instrument" Type="ModeloDados.Store.Instrument" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Member">
+        <PropertyRef Name="idMember" />
+      </Principal>
+      <Dependent Role="Instrument">
+        <PropertyRef Name="Member_idMember" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema>
