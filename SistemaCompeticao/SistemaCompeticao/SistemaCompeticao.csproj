@@ -147,6 +147,7 @@
     <Compile Include="Models\Artist.cs">
       <DependentUpon>ModeloDados.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\ArtistMetadado.cs" />
     <Compile Include="Models\Artist_has_Competition.cs">
       <DependentUpon>ModeloDados.tt</DependentUpon>
     </Compile>
