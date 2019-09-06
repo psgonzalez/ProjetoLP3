@@ -157,15 +157,19 @@
     <Compile Include="Models\Battle.cs">
       <DependentUpon>ModeloDados.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\BattleMetadado.cs" />
     <Compile Include="Models\Event.cs">
       <DependentUpon>ModeloDados.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\EventMetadado.cs" />
     <Compile Include="Models\Instrument.cs">
       <DependentUpon>ModeloDados.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\InstrumentMetadado.cs" />
     <Compile Include="Models\Member.cs">
       <DependentUpon>ModeloDados.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\MemberMetadado.cs" />
     <Compile Include="Models\ModeloDados.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -184,6 +188,7 @@
     <Compile Include="Models\Music.cs">
       <DependentUpon>ModeloDados.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\MusicMetadado.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

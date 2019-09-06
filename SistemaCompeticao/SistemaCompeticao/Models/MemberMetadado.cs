@@ -19,5 +19,8 @@ namespace SistemaCompeticao.Models
 
         [Required(ErrorMessage = "A data de nascimento é obrigatória")]
         public System.DateTime BirthDate { get; set; }
+
+        [Required(ErrorMessage = "O artista é obrigatório")]
+        public int Artist_idArtist { get; set; }
     }
 }

@@ -16,5 +16,11 @@ namespace SistemaCompeticao.Models
 
         [Required(ErrorMessage = "O horário da apresentação é obrigatório")]
         public System.TimeSpan BattleHour { get; set; }
+
+        [Required(ErrorMessage = "O evento é obrigatório")]
+        public int Event_idEvent { get; set; }
+
+        [Required(ErrorMessage = "O artista é obrigatório")]
+        public int Artist_idArtist { get; set; }
     }
 }
