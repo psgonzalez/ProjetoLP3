@@ -1,10 +1,10 @@
 ﻿@model SistemaCompeticao.Models.Instrument
 
 @{
-    ViewBag.Title = "Edit";
+    ViewBag.Title = "Editar instrumento";
 }
 
-<h2>Edit</h2>
+<h2>Editar instrumento</h2>
 
 
 @using (Html.BeginForm())
@@ -12,13 +12,12 @@
     @Html.AntiForgeryToken()
     
     <div class="form-horizontal">
-        <h4>Instrument</h4>
         <hr />
         @Html.ValidationSummary(true, "", new { @class = "text-danger" })
         @Html.HiddenFor(model => model.idInstrument)
 
         <div class="form-group">
-            @Html.LabelFor(model => model.InstrumentType, htmlAttributes: new { @class = "control-label col-md-2" })
+            @Html.LabelFor(model => "Tipo de instrumento", htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
                 @Html.EditorFor(model => model.InstrumentType, new { htmlAttributes = new { @class = "form-control" } })
                 @Html.ValidationMessageFor(model => model.InstrumentType, "", new { @class = "text-danger" })
@@ -26,7 +25,7 @@
         </div>
 
         <div class="form-group">
-            @Html.LabelFor(model => model.Music_idMusic, "Music_idMusic", htmlAttributes: new { @class = "control-label col-md-2" })
+            @Html.LabelFor(model => model.Music_idMusic, "Música", htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
                 @Html.DropDownList("Music_idMusic", null, htmlAttributes: new { @class = "form-control" })
                 @Html.ValidationMessageFor(model => model.Music_idMusic, "", new { @class = "text-danger" })
@@ -34,7 +33,7 @@
         </div>
 
         <div class="form-group">
-            @Html.LabelFor(model => model.Member_idMember, "Member_idMember", htmlAttributes: new { @class = "control-label col-md-2" })
+            @Html.LabelFor(model => model.Member_idMember, "Membro", htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
                 @Html.DropDownList("Member_idMember", null, htmlAttributes: new { @class = "form-control" })
                 @Html.ValidationMessageFor(model => model.Member_idMember, "", new { @class = "text-danger" })
@@ -43,14 +42,14 @@
 
         <div class="form-group">
             <div class="col-md-offset-2 col-md-10">
-                <input type="submit" value="Save" class="btn btn-default" />
+                <input type="submit" value="Salvar" class="btn btn-default" />
             </div>
         </div>
     </div>
 }
 
 <div>
-    @Html.ActionLink("Back to List", "Index")
+    @Html.ActionLink("Listar instrumentos", "Index")
 </div>
 
 @section Scripts {

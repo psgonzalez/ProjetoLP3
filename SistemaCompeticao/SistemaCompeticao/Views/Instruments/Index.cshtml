@@ -1,24 +1,24 @@
 ﻿@model IEnumerable<SistemaCompeticao.Models.Instrument>
 
 @{
-    ViewBag.Title = "Index";
+    ViewBag.Title = "Instrumentos";
 }
 
-<h2>Index</h2>
+<h2>Instrumentos</h2>
 
 <p>
-    @Html.ActionLink("Create New", "Create")
+    @Html.ActionLink("Cadastrar novo instrumento", "Create")
 </p>
 <table class="table">
     <tr>
         <th>
-            @Html.DisplayNameFor(model => model.InstrumentType)
+            Tipo de instrumento
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.Music.Title)
+            Música
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.Member.Name)
+            Membro
         </th>
         <th></th>
     </tr>
@@ -35,9 +35,9 @@
             @Html.DisplayFor(modelItem => item.Member.Name)
         </td>
         <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.idInstrument }) |
-            @Html.ActionLink("Details", "Details", new { id=item.idInstrument }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.idInstrument })
+            @Html.ActionLink("Editar", "Edit", new { id=item.idInstrument }) |
+            @Html.ActionLink("Detalhes", "Details", new { id=item.idInstrument }) |
+            @Html.ActionLink("Deletar", "Delete", new { id=item.idInstrument })
         </td>
     </tr>
 }

@@ -1,25 +1,18 @@
 ﻿@model SistemaCompeticao.Models.Instrument
 
 @{
-    ViewBag.Title = "Details";
+    ViewBag.Title = "Detalhes";
 }
 
-<h2>Details</h2>
+<h2>Detalhes</h2>
 
 <div>
-    <h4>Instrument</h4>
+    <h4>@Html.DisplayFor(model => model.InstrumentType)</h4>
     <hr />
     <dl class="dl-horizontal">
-        <dt>
-            @Html.DisplayNameFor(model => model.InstrumentType)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.InstrumentType)
-        </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.Music.Title)
+            @Html.DisplayNameFor(model => "Música")
         </dt>
 
         <dd>
@@ -27,7 +20,7 @@
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.Member.Name)
+            @Html.DisplayNameFor(model => "Membro")
         </dt>
 
         <dd>
@@ -37,6 +30,6 @@
     </dl>
 </div>
 <p>
-    @Html.ActionLink("Edit", "Edit", new { id = Model.idInstrument }) |
-    @Html.ActionLink("Back to List", "Index")
+    @Html.ActionLink("Editar", "Edit", new { id = Model.idInstrument }) |
+    @Html.ActionLink("Listar instrumentos", "Index")
 </p>
