@@ -16,7 +16,7 @@ namespace SistemaCompeticao.Models
     {
         public int Artist_idArtist { get; set; }
         public int Battle_idBattle { get; set; }
-        public string idArtist_has_Competition { get; set; }
+        public int idArtist_has_Competition { get; set; }
     
         public virtual Artist Artist { get; set; }
         public virtual Battle Battle { get; set; }

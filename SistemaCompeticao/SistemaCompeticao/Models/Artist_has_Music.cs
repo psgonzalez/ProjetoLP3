@@ -16,7 +16,7 @@ namespace SistemaCompeticao.Models
     {
         public int Artist_idArtist { get; set; }
         public int Music_idMusic { get; set; }
-        public string idArtist_has_Music { get; set; }
+        public int idArtist_has_Music { get; set; }
     
         public virtual Artist Artist { get; set; }
         public virtual Music Music { get; set; }

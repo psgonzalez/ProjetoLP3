@@ -78,7 +78,7 @@
     </Key>
     <Property Name="Artist_idArtist" Type="int" Nullable="false" />
     <Property Name="Battle_idBattle" Type="int" Nullable="false" />
-    <Property Name="idArtist_has_Competition" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="idArtist_has_Competition" Type="int" Nullable="false" />
   </EntityType>
   <EntityType Name="Member">
     <Key>
@@ -114,7 +114,7 @@
     </Key>
     <Property Name="Artist_idArtist" Type="int" Nullable="false" />
     <Property Name="Music_idMusic" Type="int" Nullable="false" />
-    <Property Name="idArtist_has_Music" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="idArtist_has_Music" Type="int" Nullable="false" />
   </EntityType>
   <Association Name="EventBattle">
     <End Role="Event" Type="ModeloDados.Store.Event" Multiplicity="1" />
@@ -309,7 +309,7 @@
           <Property Name="Artist_idArtist" Type="Int32" Nullable="false" />
           <NavigationProperty Name="Battle" Relationship="ModeloDados.BattleArtist_has_Competition" FromRole="Artist_has_Competition" ToRole="Battle" />
           <Property Name="Battle_idBattle" Type="Int32" Nullable="false" />
-          <Property Name="idArtist_has_Competition" Type="String" Nullable="false" />
+          <Property Name="idArtist_has_Competition" Type="Int32" Nullable="false" />
         </EntityType>
         <Association Name="ArtistArtist_has_Competition">
           <End Type="ModeloDados.Artist" Role="Artist" Multiplicity="1" />
@@ -389,7 +389,7 @@
           <Property Name="Artist_idArtist" Type="Int32" Nullable="false" />
           <NavigationProperty Name="Music" Relationship="ModeloDados.MusicArtist_has_Music" FromRole="Artist_has_Music" ToRole="Music" />
           <Property Name="Music_idMusic" Type="Int32" Nullable="false" />
-          <Property Name="idArtist_has_Music" Type="String" Nullable="false" />
+          <Property Name="idArtist_has_Music" Type="Int32" Nullable="false" />
         </EntityType>
         <Association Name="ArtistArtist_has_Music">
           <End Type="ModeloDados.Artist" Role="Artist" Multiplicity="1" />
