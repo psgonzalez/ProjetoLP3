@@ -1,8 +1,8 @@
-
+﻿
 -- --------------------------------------------------
 -- Entity Designer DDL Script for SQL Server 2005, 2008, 2012 and Azure
 -- --------------------------------------------------
--- Date Created: 09/01/2019 12:22:58
+-- Date Created: 09/08/2019 13:37:47
 -- Generated from EDMX file: C:\Users\Paula\Documents\Documentos IFSP\3° ANO\LP3\ProjetoLP3\SistemaCompeticao\SistemaCompeticao\Models\ModeloDados.edmx
 -- --------------------------------------------------
 
@@ -17,11 +17,59 @@ GO
 -- Dropping existing FOREIGN KEY constraints
 -- --------------------------------------------------
 
+IF OBJECT_ID(N'[dbo].[FK_EventBattle]', 'F') IS NOT NULL
+    ALTER TABLE [dbo].[Battle] DROP CONSTRAINT [FK_EventBattle];
+GO
+IF OBJECT_ID(N'[dbo].[FK_ArtistArtist_has_Competition]', 'F') IS NOT NULL
+    ALTER TABLE [dbo].[Artist_has_Competition] DROP CONSTRAINT [FK_ArtistArtist_has_Competition];
+GO
+IF OBJECT_ID(N'[dbo].[FK_BattleArtist_has_Competition]', 'F') IS NOT NULL
+    ALTER TABLE [dbo].[Artist_has_Competition] DROP CONSTRAINT [FK_BattleArtist_has_Competition];
+GO
+IF OBJECT_ID(N'[dbo].[FK_ArtistMember]', 'F') IS NOT NULL
+    ALTER TABLE [dbo].[Member] DROP CONSTRAINT [FK_ArtistMember];
+GO
+IF OBJECT_ID(N'[dbo].[FK_ArtistArtist_has_Music]', 'F') IS NOT NULL
+    ALTER TABLE [dbo].[Artist_has_Music] DROP CONSTRAINT [FK_ArtistArtist_has_Music];
+GO
+IF OBJECT_ID(N'[dbo].[FK_MusicArtist_has_Music]', 'F') IS NOT NULL
+    ALTER TABLE [dbo].[Artist_has_Music] DROP CONSTRAINT [FK_MusicArtist_has_Music];
+GO
+IF OBJECT_ID(N'[dbo].[FK_MusicInstrument]', 'F') IS NOT NULL
+    ALTER TABLE [dbo].[Instrument] DROP CONSTRAINT [FK_MusicInstrument];
+GO
+IF OBJECT_ID(N'[dbo].[FK_MemberInstrument]', 'F') IS NOT NULL
+    ALTER TABLE [dbo].[Instrument] DROP CONSTRAINT [FK_MemberInstrument];
+GO
 
 -- --------------------------------------------------
 -- Dropping existing tables
 -- --------------------------------------------------
 
+IF OBJECT_ID(N'[dbo].[Event]', 'U') IS NOT NULL
+    DROP TABLE [dbo].[Event];
+GO
+IF OBJECT_ID(N'[dbo].[Battle]', 'U') IS NOT NULL
+    DROP TABLE [dbo].[Battle];
+GO
+IF OBJECT_ID(N'[dbo].[Artist]', 'U') IS NOT NULL
+    DROP TABLE [dbo].[Artist];
+GO
+IF OBJECT_ID(N'[dbo].[Artist_has_Competition]', 'U') IS NOT NULL
+    DROP TABLE [dbo].[Artist_has_Competition];
+GO
+IF OBJECT_ID(N'[dbo].[Member]', 'U') IS NOT NULL
+    DROP TABLE [dbo].[Member];
+GO
+IF OBJECT_ID(N'[dbo].[Instrument]', 'U') IS NOT NULL
+    DROP TABLE [dbo].[Instrument];
+GO
+IF OBJECT_ID(N'[dbo].[Music]', 'U') IS NOT NULL
+    DROP TABLE [dbo].[Music];
+GO
+IF OBJECT_ID(N'[dbo].[Artist_has_Music]', 'U') IS NOT NULL
+    DROP TABLE [dbo].[Artist_has_Music];
+GO
 
 -- --------------------------------------------------
 -- Creating all tables
