@@ -4,7 +4,7 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="ecf4263da71d4f1b955362beda0a0e25" Name="Diagram1" ZoomLevel="46" >
+      <Diagram DiagramId="ecf4263da71d4f1b955362beda0a0e25" Name="Diagram1" ZoomLevel="77" >
         <EntityTypeShape EntityType="ModeloDados.Event" Width="1.5" PointX="13.375" PointY="3" />
         <EntityTypeShape EntityType="ModeloDados.Battle" Width="1.5" PointX="10.75" PointY="2.75" />
         <AssociationConnector Association="ModeloDados.EventBattle" />

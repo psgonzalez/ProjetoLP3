@@ -2,14 +2,14 @@
 -- --------------------------------------------------
 -- Entity Designer DDL Script for SQL Server 2005, 2008, 2012 and Azure
 -- --------------------------------------------------
--- Date Created: 09/08/2019 13:58:48
+-- Date Created: 09/08/2019 14:05:13
 -- Generated from EDMX file: C:\Users\Paula\Documents\Documentos IFSP\3° ANO\LP3\ProjetoLP3\SistemaCompeticao\SistemaCompeticao\Models\ModeloDados.edmx
 -- --------------------------------------------------
 
-SET QUOTED_IDENTIFIER OFF;
-GO
-USE [CompeticaoDB];
-GO
+--SET QUOTED_IDENTIFIER OFF;
+--GO
+--USE [CompeticaoDB];
+--GO
 IF SCHEMA_ID(N'dbo') IS NULL EXECUTE(N'CREATE SCHEMA [dbo]');
 GO
 
@@ -104,7 +104,7 @@ GO
 CREATE TABLE [dbo].[Artist_has_Competition] (
     [Artist_idArtist] int  NOT NULL,
     [Battle_idBattle] int  NOT NULL,
-    [idArtist_has_Competition] int  NOT NULL
+    [idArtist_has_Competition] int IDENTITY(1,1) NOT NULL
 );
 GO
 
@@ -140,7 +140,7 @@ GO
 CREATE TABLE [dbo].[Artist_has_Music] (
     [Artist_idArtist] int  NOT NULL,
     [Music_idMusic] int  NOT NULL,
-    [idArtist_has_Music] int  NOT NULL
+    [idArtist_has_Music] int IDENTITY(1,1) NOT NULL
 );
 GO
 
