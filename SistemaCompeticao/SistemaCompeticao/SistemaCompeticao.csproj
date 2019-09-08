@@ -205,7 +205,6 @@
       <LastGenOutput>ModeloDados.Context.cs</LastGenOutput>
       <DependentUpon>ModeloDados.edmx</DependentUpon>
     </Content>
-    <Content Include="Models\ModeloDados.edmx.sql" />
     <Content Include="Models\ModeloDados.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <LastGenOutput>ModeloDados.cs</LastGenOutput>
