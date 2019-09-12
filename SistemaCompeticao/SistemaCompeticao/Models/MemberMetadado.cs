@@ -11,12 +11,14 @@ namespace SistemaCompeticao.Models
 
     public class MemberMetadado
     {
+        [Display(Name = "Nome do Membro")]
         [Required(ErrorMessage = "O nome é obrigatório")]
         public string Name { get; set; }
 
         [Required(ErrorMessage = "O CPF é obrigatório")]
         public string CPF { get; set; }
 
+        [Display(Name = "Data de Nascimento")]
         [Required(ErrorMessage = "A data de nascimento é obrigatória")]
         public System.DateTime BirthDate { get; set; }
 

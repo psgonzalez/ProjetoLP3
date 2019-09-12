@@ -1,13 +1,13 @@
 ﻿@model IEnumerable<SistemaCompeticao.Models.Event>
 
 @{
-    ViewBag.Title = "Index";
+    ViewBag.Title = "Eventos";
 }
 
-<h2>Index</h2>
+<h2>Lista de Eventos</h2>
 
 <p>
-    @Html.ActionLink("Create New", "Create")
+    @Html.ActionLink("Cadastrar Evento", "Create")
 </p>
 <table class="table">
     <tr>
@@ -29,9 +29,9 @@
             @Html.DisplayFor(modelItem => item.EventDate)
         </td>
         <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.idEvent }) |
-            @Html.ActionLink("Details", "Details", new { id=item.idEvent }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.idEvent })
+            @Html.ActionLink("Editar", "Edit", new { id=item.idEvent }) |
+            @Html.ActionLink("Detalhes", "Details", new { id=item.idEvent }) |
+            @Html.ActionLink("Excluir", "Delete", new { id=item.idEvent })
         </td>
     </tr>
 }
