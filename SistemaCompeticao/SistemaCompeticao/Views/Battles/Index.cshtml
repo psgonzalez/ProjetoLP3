@@ -1,24 +1,24 @@
 ﻿@model IEnumerable<SistemaCompeticao.Models.Battle>
 
 @{
-    ViewBag.Title = "Index";
+    ViewBag.Title = "Batalhas";
 }
 
-<h2>Index</h2>
+<h2>Lista de Batalhas</h2>
 
 <p>
-    @Html.ActionLink("Create New", "Create")
+    @Html.ActionLink("Cadastrar Batalha", "Create")
 </p>
 <table class="table">
     <tr>
         <th>
-            @Html.DisplayNameFor(model => model.Name)
+            Nome
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.BattleHour)
+            Horário
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.Event.Name)
+            Nome do Evento
         </th>
         <th></th>
     </tr>
@@ -35,9 +35,9 @@
             @Html.DisplayFor(modelItem => item.Event.Name)
         </td>
         <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.idBattle }) |
-            @Html.ActionLink("Details", "Details", new { id=item.idBattle }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.idBattle })
+            @Html.ActionLink("Editar", "Edit", new { id=item.idBattle }) |
+            @Html.ActionLink("Detalhes", "Details", new { id=item.idBattle }) |
+            @Html.ActionLink("Excluir", "Delete", new { id=item.idBattle })
         </td>
     </tr>
 }

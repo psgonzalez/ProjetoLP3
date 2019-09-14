@@ -1,21 +1,21 @@
 ﻿@model IEnumerable<SistemaCompeticao.Models.Artist>
 
 @{
-    ViewBag.Title = "Index";
+    ViewBag.Title = "Artistas";
 }
 
-<h2>Index</h2>
+<h2>Lista de Artistas</h2>
 
 <p>
-    @Html.ActionLink("Create New", "Create")
+    @Html.ActionLink("Cadastrar Artista", "Create")
 </p>
 <table class="table">
     <tr>
         <th>
-            @Html.DisplayNameFor(model => model.Name)
+            Nome
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.FormationYear)
+            Ano de Formação
         </th>
         <th></th>
     </tr>
@@ -29,9 +29,9 @@
             @Html.DisplayFor(modelItem => item.FormationYear)
         </td>
         <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.idArtist }) |
-            @Html.ActionLink("Details", "Details", new { id=item.idArtist }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.idArtist })
+            @Html.ActionLink("Editar", "Edit", new { id=item.idArtist }) |
+            @Html.ActionLink("Detalhes", "Details", new { id=item.idArtist }) |
+            @Html.ActionLink("Excluir", "Delete", new { id=item.idArtist })
         </td>
     </tr>
 }
