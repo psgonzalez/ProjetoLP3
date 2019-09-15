@@ -135,6 +135,8 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\ArtistsController.cs" />
+    <Compile Include="Controllers\Artist_has_CompetitionController.cs" />
+    <Compile Include="Controllers\Artist_has_MusicController.cs" />
     <Compile Include="Controllers\BattlesController.cs" />
     <Compile Include="Controllers\EventsController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
@@ -151,6 +153,8 @@
     <Compile Include="Models\Artist_has_Competition.cs">
       <DependentUpon>ModeloDados.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\Artist_has_MusicMetadado.cs" />
+    <Compile Include="Models\Artist_has_CompetitionMetadado.cs" />
     <Compile Include="Models\Artist_has_Music.cs">
       <DependentUpon>ModeloDados.tt</DependentUpon>
     </Compile>
@@ -202,14 +206,14 @@
     <Content Include="Content\Site.css" />
     <Content Include="Models\ModeloDados.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>ModeloDados.Context.cs</LastGenOutput>
       <DependentUpon>ModeloDados.edmx</DependentUpon>
+      <LastGenOutput>ModeloDados.Context.cs</LastGenOutput>
     </Content>
     <Content Include="Models\ModeloDados.edmx.sql" />
     <Content Include="Models\ModeloDados.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>ModeloDados.cs</LastGenOutput>
       <DependentUpon>ModeloDados.edmx</DependentUpon>
+      <LastGenOutput>ModeloDados.cs</LastGenOutput>
     </Content>
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
@@ -273,6 +277,16 @@
     <Content Include="Views\Musics\Details.cshtml" />
     <Content Include="Views\Musics\Edit.cshtml" />
     <Content Include="Views\Musics\Index.cshtml" />
+    <Content Include="Views\Artist_has_Competition\Create.cshtml" />
+    <Content Include="Views\Artist_has_Competition\Delete.cshtml" />
+    <Content Include="Views\Artist_has_Competition\Details.cshtml" />
+    <Content Include="Views\Artist_has_Competition\Edit.cshtml" />
+    <Content Include="Views\Artist_has_Competition\Index.cshtml" />
+    <Content Include="Views\Artist_has_Music\Create.cshtml" />
+    <Content Include="Views\Artist_has_Music\Delete.cshtml" />
+    <Content Include="Views\Artist_has_Music\Details.cshtml" />
+    <Content Include="Views\Artist_has_Music\Edit.cshtml" />
+    <Content Include="Views\Artist_has_Music\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

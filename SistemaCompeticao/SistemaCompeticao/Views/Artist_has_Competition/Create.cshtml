@@ -1,0 +1,48 @@
+﻿@model SistemaCompeticao.Models.Artist_has_Competition
+
+@{
+    ViewBag.Title = "Cadastrar Artista em Batalha";
+}
+
+<h2>Cadastrar Artista em Batalha</h2>
+
+
+@using (Html.BeginForm()) 
+{
+    @Html.AntiForgeryToken()
+    
+    <div class="form-horizontal">
+        <h4>Cadastro em Batalha</h4>
+        <hr />
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        <div class="form-group">
+            @Html.LabelFor(model => model.Artist_idArtist, "Nome do Artista", htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.DropDownList("Artist_idArtist", null, htmlAttributes: new { @class = "form-control" })
+                @Html.ValidationMessageFor(model => model.Artist_idArtist, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Battle_idBattle, "Nome da Batalha", htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.DropDownList("Battle_idBattle", null, htmlAttributes: new { @class = "form-control" })
+                @Html.ValidationMessageFor(model => model.Battle_idBattle, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Cadastrar" class="btn btn-default" />
+            </div>
+        </div>
+    </div>
+}
+
+<div>
+    @Html.ActionLink("Voltar para Lista", "Index")
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

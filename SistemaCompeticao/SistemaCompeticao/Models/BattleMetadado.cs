@@ -11,16 +11,15 @@ namespace SistemaCompeticao.Models
 
     public class BattleMetadado
     {
+        [Display(Name = "Nome da Batalha")]
         [Required(ErrorMessage = "O nome da batalha é obrigatório")]
         public string Name { get; set; }
 
+        [Display(Name = "Horário da Apresentação")]
         [Required(ErrorMessage = "O horário da apresentação é obrigatório")]
         public System.TimeSpan BattleHour { get; set; }
 
         [Required(ErrorMessage = "O evento é obrigatório")]
         public int Event_idEvent { get; set; }
-
-        [Required(ErrorMessage = "O artista é obrigatório")]
-        public int Artist_idArtist { get; set; }
     }
 }

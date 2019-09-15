@@ -1,10 +1,10 @@
 ﻿@model SistemaCompeticao.Models.Music
 
 @{
-    ViewBag.Title = "Editar música";
+    ViewBag.Title = "Editar";
 }
 
-<h2>Editar música</h2>
+<h2>Editar</h2>
 
 
 @using (Html.BeginForm())
@@ -17,7 +17,7 @@
         @Html.HiddenFor(model => model.idMusic)
 
         <div class="form-group">
-            @Html.LabelFor(model => "Título", htmlAttributes: new { @class = "control-label col-md-2" })
+            @Html.LabelFor(model => model.Title, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
                 @Html.EditorFor(model => model.Title, new { htmlAttributes = new { @class = "form-control" } })
                 @Html.ValidationMessageFor(model => model.Title, "", new { @class = "text-danger" })
@@ -25,7 +25,7 @@
         </div>
 
         <div class="form-group">
-            @Html.LabelFor(model => "Duração", htmlAttributes: new { @class = "control-label col-md-2" })
+            @Html.LabelFor(model => model.MusicLength, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
                 @Html.EditorFor(model => model.MusicLength, new { htmlAttributes = new { @class = "form-control" } })
                 @Html.ValidationMessageFor(model => model.MusicLength, "", new { @class = "text-danger" })
@@ -33,7 +33,7 @@
         </div>
 
         <div class="form-group">
-            @Html.LabelFor(model => "Gênero musical", htmlAttributes: new { @class = "control-label col-md-2" })
+            @Html.LabelFor(model => model.Genre, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
                 @Html.EditorFor(model => model.Genre, new { htmlAttributes = new { @class = "form-control" } })
                 @Html.ValidationMessageFor(model => model.Genre, "", new { @class = "text-danger" })

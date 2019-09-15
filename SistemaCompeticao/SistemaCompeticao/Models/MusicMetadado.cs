@@ -11,12 +11,15 @@ namespace SistemaCompeticao.Models
 
     public class MusicMetadado
     {
+        [Display(Name = "Título da Música")]
         [Required(ErrorMessage = "O título da música é obrigatório")]
         public string Title { get; set; }
 
+        [Display(Name = "Duração")]
         [Required(ErrorMessage = "A duração é obrigatória")]
         public System.TimeSpan MusicLength { get; set; }
 
+        [Display(Name = "Gênero Musical")]
         [Required(ErrorMessage = "O gênero musical é obrigatório")]
         public string Genre { get; set; }
     }

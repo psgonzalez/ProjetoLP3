@@ -11,6 +11,7 @@ namespace SistemaCompeticao.Models
 
     public class InstrumentMetadado
     {
+        [Display(Name = "Tipo de Instrumento")]
         [Required(ErrorMessage = "O tipo de instrumento é obrigatório")]
         public string InstrumentType { get; set; }
 

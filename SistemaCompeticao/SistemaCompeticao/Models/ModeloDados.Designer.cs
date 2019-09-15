@@ -1,4 +1,4 @@
-﻿// T4 code generation is enabled for model 'C:\Users\Paula\Documents\Documentos IFSP\3° ANO\LP3\ProjetoLP3\SistemaCompeticao\SistemaCompeticao\Models\ModeloDados.edmx'. 
+﻿// T4 code generation is enabled for model 'D:\Files\ProjetoLP3-master\ProjetoLP3-master\SistemaCompeticao\SistemaCompeticao\Models\ModeloDados.edmx'. 
 // To enable legacy code generation, change the value of the 'Code Generation Strategy' designer
 // property to 'Legacy ObjectContext'. This property is available in the Properties Window when the model
 // is open in the designer.

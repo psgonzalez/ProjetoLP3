@@ -1,0 +1,34 @@
+﻿@model SistemaCompeticao.Models.Artist_has_Music
+
+@{
+    ViewBag.Title = "Detalhes";
+}
+
+<h2>Detalhes</h2>
+
+<div>
+    <h4>Participação</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Artist.Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Artist.Name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Music.Title)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Music.Title)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Editar", "Edit", new { id = Model.idArtist_has_Music }) |
+    @Html.ActionLink("Voltar para Lista", "Index")
+</p>

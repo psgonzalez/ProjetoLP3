@@ -1,0 +1,39 @@
+﻿@model IEnumerable<SistemaCompeticao.Models.Artist_has_Music>
+
+@{
+    ViewBag.Title = "Participações em Músicas";
+}
+
+<h2>Lista de Participações</h2>
+
+<p>
+    @Html.ActionLink("Cadastrar Participação", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Artist.Name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Music.Title)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Artist.Name)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Music.Title)
+        </td>
+        <td>
+            @Html.ActionLink("Editar", "Edit", new { id=item.idArtist_has_Music }) |
+            @Html.ActionLink("Detalhes", "Details", new { id=item.idArtist_has_Music }) |
+            @Html.ActionLink("Deletar", "Delete", new { id=item.idArtist_has_Music })
+        </td>
+    </tr>
+}
+
+</table>

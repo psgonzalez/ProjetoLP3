@@ -18,8 +18,8 @@ namespace SistemaCompeticao.Models
         public Artist()
         {
             this.Artist_has_Competition = new HashSet<Artist_has_Competition>();
-            this.Member = new HashSet<Member>();
             this.Artist_has_Music = new HashSet<Artist_has_Music>();
+            this.Member = new HashSet<Member>();
         }
     
         public int idArtist { get; set; }
@@ -29,8 +29,8 @@ namespace SistemaCompeticao.Models
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Artist_has_Competition> Artist_has_Competition { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Member> Member { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Artist_has_Music> Artist_has_Music { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Member> Member { get; set; }
     }
 }

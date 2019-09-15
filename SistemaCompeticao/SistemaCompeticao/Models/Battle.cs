@@ -25,8 +25,8 @@ namespace SistemaCompeticao.Models
         public System.TimeSpan BattleHour { get; set; }
         public int Event_idEvent { get; set; }
     
-        public virtual Event Event { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Artist_has_Competition> Artist_has_Competition { get; set; }
+        public virtual Event Event { get; set; }
     }
 }
