@@ -2,7 +2,7 @@
 <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
   <EntityContainerMapping StorageEntityContainer="CompeticaoDBModelStoreContainer" CdmEntityContainer="CompeticaoDB">
     <EntitySetMapping Name="Artist">
-      <EntityTypeMapping TypeName="CompeticaoDBModel.Artist">
+      <EntityTypeMapping TypeName="IsTypeOf(CompeticaoDBModel.Artist)">
         <MappingFragment StoreEntitySet="Artist">
           <ScalarProperty Name="idArtist" ColumnName="idArtist" />
           <ScalarProperty Name="Name" ColumnName="Name" />
@@ -11,25 +11,25 @@
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="Artist_has_Competition">
-      <EntityTypeMapping TypeName="CompeticaoDBModel.Artist_has_Competition">
+      <EntityTypeMapping TypeName="IsTypeOf(CompeticaoDBModel.Artist_has_Competition)">
         <MappingFragment StoreEntitySet="Artist_has_Competition">
+          <ScalarProperty Name="idArtist_has_Competition" ColumnName="idArtist_has_Competition" />
           <ScalarProperty Name="Artist_idArtist" ColumnName="Artist_idArtist" />
           <ScalarProperty Name="Battle_idBattle" ColumnName="Battle_idBattle" />
-          <ScalarProperty Name="idArtist_has_Competition" ColumnName="idArtist_has_Competition" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="Artist_has_Music">
-      <EntityTypeMapping TypeName="CompeticaoDBModel.Artist_has_Music">
+      <EntityTypeMapping TypeName="IsTypeOf(CompeticaoDBModel.Artist_has_Music)">
         <MappingFragment StoreEntitySet="Artist_has_Music">
+          <ScalarProperty Name="idArtist_has_Music" ColumnName="idArtist_has_Music" />
           <ScalarProperty Name="Artist_idArtist" ColumnName="Artist_idArtist" />
           <ScalarProperty Name="Music_idMusic" ColumnName="Music_idMusic" />
-          <ScalarProperty Name="idArtist_has_Music" ColumnName="idArtist_has_Music" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="Battle">
-      <EntityTypeMapping TypeName="CompeticaoDBModel.Battle">
+      <EntityTypeMapping TypeName="IsTypeOf(CompeticaoDBModel.Battle)">
         <MappingFragment StoreEntitySet="Battle">
           <ScalarProperty Name="idBattle" ColumnName="idBattle" />
           <ScalarProperty Name="Name" ColumnName="Name" />
@@ -39,7 +39,7 @@
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="Event">
-      <EntityTypeMapping TypeName="CompeticaoDBModel.Event">
+      <EntityTypeMapping TypeName="IsTypeOf(CompeticaoDBModel.Event)">
         <MappingFragment StoreEntitySet="Event">
           <ScalarProperty Name="idEvent" ColumnName="idEvent" />
           <ScalarProperty Name="Name" ColumnName="Name" />
@@ -48,7 +48,7 @@
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="Instrument">
-      <EntityTypeMapping TypeName="CompeticaoDBModel.Instrument">
+      <EntityTypeMapping TypeName="IsTypeOf(CompeticaoDBModel.Instrument)">
         <MappingFragment StoreEntitySet="Instrument">
           <ScalarProperty Name="idInstrument" ColumnName="idInstrument" />
           <ScalarProperty Name="InstrumentType" ColumnName="InstrumentType" />
@@ -58,7 +58,7 @@
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="Member">
-      <EntityTypeMapping TypeName="CompeticaoDBModel.Member">
+      <EntityTypeMapping TypeName="IsTypeOf(CompeticaoDBModel.Member)">
         <MappingFragment StoreEntitySet="Member">
           <ScalarProperty Name="idMember" ColumnName="idMember" />
           <ScalarProperty Name="Name" ColumnName="Name" />
@@ -69,7 +69,7 @@
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="Music">
-      <EntityTypeMapping TypeName="CompeticaoDBModel.Music">
+      <EntityTypeMapping TypeName="IsTypeOf(CompeticaoDBModel.Music)">
         <MappingFragment StoreEntitySet="Music">
           <ScalarProperty Name="idMusic" ColumnName="idMusic" />
           <ScalarProperty Name="Title" ColumnName="Title" />
