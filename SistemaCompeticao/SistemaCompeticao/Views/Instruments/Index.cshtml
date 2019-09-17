@@ -29,10 +29,10 @@
             @Html.DisplayFor(modelItem => item.InstrumentType)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.Music.Title)
+            @Html.ActionLink(item.Music.Title, "Details", "Musics", new { @id = item.Music.idMusic }, null)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.Member.Name)
+            @Html.ActionLink(item.Member.Name, "Details", "Members", new { @id = item.Member.idMember }, null)
         </td>
         <td>
             @Html.ActionLink("Editar", "Edit", new { id=item.idInstrument }) |

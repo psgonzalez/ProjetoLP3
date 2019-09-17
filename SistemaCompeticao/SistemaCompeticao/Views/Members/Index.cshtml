@@ -38,7 +38,7 @@
             @Html.DisplayFor(modelItem => item.BirthDate)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.Artist.Name)
+            @Html.ActionLink(item.Artist.Name, "Details", "Artists", new { @id = item.Artist.idArtist }, null)
         </td>
         <td>
             @Html.ActionLink("Editar", "Edit", new { id=item.idMember }) |

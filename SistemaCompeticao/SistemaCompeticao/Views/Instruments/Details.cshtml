@@ -16,7 +16,7 @@
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.Music.Title)
+            @Html.ActionLink(@Model.Music.Title, "Details", "Musics", new { @id = Model.Music.idMusic }, null)
         </dd>
 
         <dt>
@@ -24,7 +24,7 @@
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.Member.Name)
+            @Html.ActionLink(@Model.Member.Name, "Details", "Members", new { @id = Model.Member.idMember}, null)
         </dd>
 
     </dl>

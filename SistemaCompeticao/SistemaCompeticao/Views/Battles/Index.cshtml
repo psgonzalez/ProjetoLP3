@@ -32,7 +32,7 @@
             @Html.DisplayFor(modelItem => item.BattleHour)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.Event.Name)
+            @Html.ActionLink(item.Event.Name, "Details", "Events", new { @id = item.Event.idEvent }, null)
         </td>
         <td>
             @Html.ActionLink("Editar", "Edit", new { id=item.idBattle }) |

@@ -23,10 +23,10 @@
 @foreach (var item in Model) {
     <tr>
         <td>
-            @Html.DisplayFor(modelItem => item.Artist.Name)
+            @Html.ActionLink(item.Artist.Name, "Details", "Artists", new { @id = item.Artist.idArtist }, null)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.Music.Title)
+            @Html.ActionLink(item.Music.Title, "Details", "Musics", new { @id = item.Music.idMusic }, null)
         </td>
         <td>
             @Html.ActionLink("Editar", "Edit", new { id=item.idArtist_has_Music }) |
