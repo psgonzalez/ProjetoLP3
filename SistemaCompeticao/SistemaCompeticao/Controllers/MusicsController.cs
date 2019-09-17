@@ -12,7 +12,7 @@ namespace SistemaCompeticao.Controllers
 {
     public class MusicsController : Controller
     {
-        private ModeloDadosContainer db = new ModeloDadosContainer();
+        private CompeticaoDB db = new CompeticaoDB();
 
         // GET: Musics
         public ActionResult Index()

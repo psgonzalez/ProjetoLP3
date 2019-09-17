@@ -4,23 +4,23 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="319562783f9b42f98c22b8e437c30076" Name="Diagram1">
-        <EntityTypeShape EntityType="ModeloDadosContainer.Artist" Width="1.5" PointX="0.75" PointY="4" IsExpanded="true" />
-        <EntityTypeShape EntityType="ModeloDadosContainer.Artist_has_Competition" Width="1.5" PointX="3" PointY="4.125" IsExpanded="true" />
-        <EntityTypeShape EntityType="ModeloDadosContainer.Artist_has_Music" Width="1.5" PointX="3" PointY="1.125" IsExpanded="true" />
-        <EntityTypeShape EntityType="ModeloDadosContainer.Battle" Width="1.5" PointX="0.75" PointY="7" IsExpanded="true" />
-        <EntityTypeShape EntityType="ModeloDadosContainer.Event" Width="1.5" PointX="1.5" PointY="13.25" IsExpanded="true" />
-        <EntityTypeShape EntityType="ModeloDadosContainer.Instrument" Width="1.5" PointX="5.25" PointY="9.5" IsExpanded="true" />
-        <EntityTypeShape EntityType="ModeloDadosContainer.Member" Width="1.5" PointX="3" PointY="9.375" IsExpanded="true" />
-        <EntityTypeShape EntityType="ModeloDadosContainer.Music" Width="1.5" PointX="0.75" PointY="1" IsExpanded="true" />
-        <AssociationConnector Association="ModeloDadosContainer.FK_ArtistArtist_has_Competition" ManuallyRouted="false" />
-        <AssociationConnector Association="ModeloDadosContainer.FK_ArtistArtist_has_Music" ManuallyRouted="false" />
-        <AssociationConnector Association="ModeloDadosContainer.FK_ArtistMember" ManuallyRouted="false" />
-        <AssociationConnector Association="ModeloDadosContainer.FK_BattleArtist_has_Competition" ManuallyRouted="false" />
-        <AssociationConnector Association="ModeloDadosContainer.FK_MusicArtist_has_Music" ManuallyRouted="false" />
-        <AssociationConnector Association="ModeloDadosContainer.FK_EventBattle" ManuallyRouted="false" />
-        <AssociationConnector Association="ModeloDadosContainer.FK_MemberInstrument" ManuallyRouted="false" />
-        <AssociationConnector Association="ModeloDadosContainer.FK_MusicInstrument" ManuallyRouted="false" />
+      <Diagram DiagramId="c75bc700b4e849fd9b99157706571467" Name="Diagram1">
+        <EntityTypeShape EntityType="CompeticaoDBModel.Artist" Width="1.5" PointX="0.75" PointY="4" IsExpanded="true" />
+        <EntityTypeShape EntityType="CompeticaoDBModel.Artist_has_Competition" Width="1.5" PointX="3" PointY="4.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="CompeticaoDBModel.Artist_has_Music" Width="1.5" PointX="3" PointY="1.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="CompeticaoDBModel.Battle" Width="1.5" PointX="0.75" PointY="7" IsExpanded="true" />
+        <EntityTypeShape EntityType="CompeticaoDBModel.Event" Width="1.5" PointX="1.5" PointY="13.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="CompeticaoDBModel.Instrument" Width="1.5" PointX="5.25" PointY="9.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="CompeticaoDBModel.Member" Width="1.5" PointX="3" PointY="9.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="CompeticaoDBModel.Music" Width="1.5" PointX="0.75" PointY="1" IsExpanded="true" />
+        <AssociationConnector Association="CompeticaoDBModel.FK_ArtistArtist_has_Competition" ManuallyRouted="false" />
+        <AssociationConnector Association="CompeticaoDBModel.FK_ArtistArtist_has_Music" ManuallyRouted="false" />
+        <AssociationConnector Association="CompeticaoDBModel.FK_ArtistMember" ManuallyRouted="false" />
+        <AssociationConnector Association="CompeticaoDBModel.FK_BattleArtist_has_Competition" ManuallyRouted="false" />
+        <AssociationConnector Association="CompeticaoDBModel.FK_MusicArtist_has_Music" ManuallyRouted="false" />
+        <AssociationConnector Association="CompeticaoDBModel.FK_EventBattle" ManuallyRouted="false" />
+        <AssociationConnector Association="CompeticaoDBModel.FK_MemberInstrument" ManuallyRouted="false" />
+        <AssociationConnector Association="CompeticaoDBModel.FK_MusicInstrument" ManuallyRouted="false" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

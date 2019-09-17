@@ -9,40 +9,35 @@
     @Scripts.Render("~/bundles/modernizr")
 </head>
 <body>
-    <div class="navbar navbar-inverse navbar-fixed-top">
-        <div class="container">
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                @Html.ActionLink("iMusic", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
-            </div>
-            <div class="navbar-collapse collapse">
-                <ul class="nav navbar-nav">
-                    <li>@Html.ActionLink("Músicas", "Index", "Musics")</li>
-                    <li>@Html.ActionLink("Instrumentos", "Index", "Instruments")</li>
-                    <li>@Html.ActionLink("Batalhas", "Index", "Battles")</li>
-                    <li>@Html.ActionLink("Artistas", "Index", "Artists")</li>
-                    <li>@Html.ActionLink("Membros", "Index", "Members")</li>
-                    <li>@Html.ActionLink("Eventos", "Index", "Events")</li>
-                    <li>@Html.ActionLink("Cadastros em Batalhas", "Index", "Artist_has_Competition")</li>
-                    <li>@Html.ActionLink("Participações em Músicas", "Index", "Artist_has_Music")</li>
-                </ul>
-            </div>
-        </div>
-    </div>
-    <div class="container body-content">
-        @RenderBody()
-        <hr />
-        <footer>
-            <p>&copy; @DateTime.Now.Year - Equipe iMusic (Lucas Ivars Ciziks, Miguel Shiniti Aguena, Paula Silva Gonzalez, Paulini Reis Procraci)</p>
-        </footer>
-    </div>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark mt-0">
+        @Html.ActionLink("iMusic", "Index", "Home", new { @class = "navbar-brand" })
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
 
-    @Scripts.Render("~/bundles/jquery")
-    @Scripts.Render("~/bundles/bootstrap")
-    @RenderSection("scripts", required: false)
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-link text-white">@Html.ActionLink("Músicas", "Index", "Musics")</li>
+                <li class="nav-link text-white">@Html.ActionLink("Instrumentos", "Index", "Instruments")</li>
+                <li class="nav-link text-white">@Html.ActionLink("Batalhas", "Index", "Battles")</li>
+                <li class="nav-link text-white">@Html.ActionLink("Artistas", "Index", "Artists")</li>
+                <li class="nav-link text-white">@Html.ActionLink("Membros", "Index", "Members")</li>
+                <li class="nav-link text-white">@Html.ActionLink("Eventos", "Index", "Events")</li>
+                <li class="nav-link text-white">@Html.ActionLink("Cadastros em Batalhas", "Index", "Artist_has_Competition")</li>
+                <li class="nav-link text-white">@Html.ActionLink("Participações em Músicas", "Index", "Artist_has_Music")</li>
+            </ul>
+        </div>
+    </nav>
+        <div class="container body-content">
+            @RenderBody()
+            <hr />
+            <footer>
+                <p>&copy; @DateTime.Now.Year - Equipe iMusic (Lucas Ivars Ciziks, Miguel Shiniti Aguena, Paula Silva Gonzalez, Paulini Reis Procraci)</p>
+            </footer>
+        </div>
+
+        @Scripts.Render("~/bundles/jquery")
+        @Scripts.Render("~/bundles/bootstrap")
+        @RenderSection("scripts", required: false)
 </body>
 </html>

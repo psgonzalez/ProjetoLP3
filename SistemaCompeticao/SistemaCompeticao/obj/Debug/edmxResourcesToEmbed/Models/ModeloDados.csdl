@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Schema Namespace="ModeloDadosContainer" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+<Schema Namespace="CompeticaoDBModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
   <EntityType Name="Artist">
     <Key>
       <PropertyRef Name="idArtist" />
@@ -181,7 +181,7 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <EntityContainer Name="CompeticaoDBEntities" annotation:LazyLoadingEnabled="true">
+  <EntityContainer Name="CompeticaoDB" annotation:LazyLoadingEnabled="true">
     <EntitySet Name="Artist" EntityType="Self.Artist" />
     <EntitySet Name="Artist_has_Competition" EntityType="Self.Artist_has_Competition" />
     <EntitySet Name="Artist_has_Music" EntityType="Self.Artist_has_Music" />

@@ -2,22 +2,56 @@
     ViewBag.Title = "Início";
 }
 
-<div class="jumbotron">
-    <h1>iMusic</h1>
-    <p class="lead">Mostre seus talentos e seja o melhor no meio musical!</p>
+<div class="container-fluid mt-0">
+    <div class="jumbotron text-center">
+        <h1>iMusic</h1>
+        <p class="lead">Mostre seus talentos e seja o melhor no meio musical!</p>
+    </div>
 </div>
 
-<div class="row">
-    <div class="col-md-4">
-        <img src="http://chrisgar.com.br/blog/wp-content/uploads/2014/11/BANDA.jpg" class="img-responsive"/>
-        <p><a class="btn btn-success" href="../Artists">Cadastre sua banda &raquo;</a></p> <!--Adicionar rota-->
+<div class="row justify-content-sm-center">
+    <div class="col-sm-6 col-md-4 mb-5">
+        <div class="card">
+            <img src="http://chrisgar.com.br/blog/wp-content/uploads/2014/11/BANDA.jpg" class="card-img-top" />
+
+            <div class="card-body">
+                <h4 class="card-title">Cadastre sua banda</h4>
+                <p class="card-text">Aqui no iMusic você consegue participar de diversos eventos!</p>
+            </div>
+
+            <div class="card-body">
+                <p><a class="btn btn-success" href="../Artists">Cadastre sua banda &raquo;</a></p>
+            </div>
+        </div>
     </div>
-    <div class="col-md-4">
-        <img src="http://blogfeiradanoiva.com.br/wp/wp-content/uploads/2017/03/musica-de-casamento-quantas-sao-e-como-escolher-a-ideal-770x770.jpeg" class="img-responsive" />
-        <p><a class="btn btn-success" href="../Musics">Cadastre suas músicas &raquo;</a></p> <!--Adicionar rota-->
+
+    <div class="col-sm-6 col-md-4 mb-5">
+        <div class="card">
+            <img src="https://timedotcom.files.wordpress.com/2018/04/listening-to-music-headphones.jpg?w=750&quality=85" class="card-img-top" />
+            
+            <div class="card-body">
+                <h4 class="card-title">Cadastre suas músicas</h4>
+                <p class="card-text">Além de disponibilizar suas músicas e participar de eventos, é possível checar as músicas de outros artistas!</p>
+            </div>
+
+            <div class="card-body">
+                <p><a class="btn btn-success" href="../Musics">Cadastre sua música &raquo;</a></p>
+            </div>
+        </div>
     </div>
-    <div class="col-md-4">
-        <img src="https://www.aeromusicfestival.com.br/images/convite.jpg" class="img-responsive" />
-        <p><a class="btn btn-success" href="../Events">Cheque agora os eventos &raquo;</a></p> <!--Adicionar rota-->
+
+    <div class="col-sm-6 col-md-4 mb-5">
+        <div class="card">
+            <img src="https://cdn-prod.medicalnewstoday.com/content/images/articles/321/321093/band-and-crowd-at-concert.jpg" class="card-img-top" />
+
+            <div class="card-body">
+                <h4 class="card-title">Visualizar eventos</h4>
+                <p class="card-text">Você também consegue ficar por dentro de eventos na sua região!</p>
+            </div>
+
+            <div class="card-body">
+                <p><a class="btn btn-success" href="../Events">Cheque agora &raquo;</a></p>
+            </div>
+        </div>
     </div>
 </div>

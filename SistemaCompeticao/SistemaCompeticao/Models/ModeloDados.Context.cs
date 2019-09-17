@@ -13,10 +13,10 @@ namespace SistemaCompeticao.Models
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class ModeloDadosContainer : DbContext
+    public partial class CompeticaoDB : DbContext
     {
-        public ModeloDadosContainer()
-            : base("name=ModeloDadosContainer")
+        public CompeticaoDB()
+            : base("name=CompeticaoDB")
         {
         }
     

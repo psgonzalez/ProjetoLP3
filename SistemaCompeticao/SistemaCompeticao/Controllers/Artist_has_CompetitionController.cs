@@ -12,7 +12,7 @@ namespace SistemaCompeticao.Controllers
 {
     public class Artist_has_CompetitionController : Controller
     {
-        private ModeloDadosContainer db = new ModeloDadosContainer();
+        private CompeticaoDB db = new CompeticaoDB();
 
         // GET: Artist_has_Competition
         public ActionResult Index()
