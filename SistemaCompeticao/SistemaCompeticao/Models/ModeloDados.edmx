@@ -4,215 +4,216 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-    <Schema Namespace="CompeticaoDBModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2012" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
-  <EntityContainer Name="CompeticaoDBModelStoreContainer">
-    <EntitySet Name="Artist" EntityType="CompeticaoDBModel.Store.Artist" store:Type="Tables" Schema="dbo" />
-    <EntitySet Name="Artist_has_Competition" EntityType="CompeticaoDBModel.Store.Artist_has_Competition" store:Type="Tables" Schema="dbo" />
-    <EntitySet Name="Artist_has_Music" EntityType="CompeticaoDBModel.Store.Artist_has_Music" store:Type="Tables" Schema="dbo" />
-    <EntitySet Name="Battle" EntityType="CompeticaoDBModel.Store.Battle" store:Type="Tables" Schema="dbo" />
-    <EntitySet Name="Event" EntityType="CompeticaoDBModel.Store.Event" store:Type="Tables" Schema="dbo" />
-    <EntitySet Name="Instrument" EntityType="CompeticaoDBModel.Store.Instrument" store:Type="Tables" Schema="dbo" />
-    <EntitySet Name="Member" EntityType="CompeticaoDBModel.Store.Member" store:Type="Tables" Schema="dbo" />
-    <EntitySet Name="Music" EntityType="CompeticaoDBModel.Store.Music" store:Type="Tables" Schema="dbo" />
-    <AssociationSet Name="FK_ArtistArtist_has_Competition" Association="CompeticaoDBModel.Store.FK_ArtistArtist_has_Competition">
-      <End Role="Artist" EntitySet="Artist" />
-      <End Role="Artist_has_Competition" EntitySet="Artist_has_Competition" />
-    </AssociationSet>
-    <AssociationSet Name="FK_ArtistArtist_has_Music" Association="CompeticaoDBModel.Store.FK_ArtistArtist_has_Music">
-      <End Role="Artist" EntitySet="Artist" />
-      <End Role="Artist_has_Music" EntitySet="Artist_has_Music" />
-    </AssociationSet>
-    <AssociationSet Name="FK_ArtistMember" Association="CompeticaoDBModel.Store.FK_ArtistMember">
-      <End Role="Artist" EntitySet="Artist" />
-      <End Role="Member" EntitySet="Member" />
-    </AssociationSet>
-    <AssociationSet Name="FK_BattleArtist_has_Competition" Association="CompeticaoDBModel.Store.FK_BattleArtist_has_Competition">
-      <End Role="Battle" EntitySet="Battle" />
-      <End Role="Artist_has_Competition" EntitySet="Artist_has_Competition" />
-    </AssociationSet>
-    <AssociationSet Name="FK_MusicArtist_has_Music" Association="CompeticaoDBModel.Store.FK_MusicArtist_has_Music">
-      <End Role="Music" EntitySet="Music" />
-      <End Role="Artist_has_Music" EntitySet="Artist_has_Music" />
-    </AssociationSet>
-    <AssociationSet Name="FK_EventBattle" Association="CompeticaoDBModel.Store.FK_EventBattle">
-      <End Role="Event" EntitySet="Event" />
-      <End Role="Battle" EntitySet="Battle" />
-    </AssociationSet>
-    <AssociationSet Name="FK_MemberInstrument" Association="CompeticaoDBModel.Store.FK_MemberInstrument">
-      <End Role="Member" EntitySet="Member" />
-      <End Role="Instrument" EntitySet="Instrument" />
-    </AssociationSet>
-    <AssociationSet Name="FK_MusicInstrument" Association="CompeticaoDBModel.Store.FK_MusicInstrument">
-      <End Role="Music" EntitySet="Music" />
-      <End Role="Instrument" EntitySet="Instrument" />
-    </AssociationSet>
-  </EntityContainer>
-  <EntityType Name="Artist">
-    <Key>
-      <PropertyRef Name="idArtist" />
-    </Key>
-    <Property Name="idArtist" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="Name" Type="nvarchar(max)" Nullable="false" />
-    <Property Name="FormationYear" Type="nvarchar(max)" Nullable="false" />
-  </EntityType>
-  <EntityType Name="Artist_has_Competition">
-    <Key>
-      <PropertyRef Name="idArtist_has_Competition" />
-    </Key>
-    <Property Name="Artist_idArtist" Type="int" Nullable="false" />
-    <Property Name="Battle_idBattle" Type="int" Nullable="false" />
-    <Property Name="idArtist_has_Competition" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-  </EntityType>
-  <EntityType Name="Artist_has_Music">
-    <Key>
-      <PropertyRef Name="idArtist_has_Music" />
-    </Key>
-    <Property Name="Artist_idArtist" Type="int" Nullable="false" />
-    <Property Name="Music_idMusic" Type="int" Nullable="false" />
-    <Property Name="idArtist_has_Music" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-  </EntityType>
-  <EntityType Name="Battle">
-    <Key>
-      <PropertyRef Name="idBattle" />
-    </Key>
-    <Property Name="idBattle" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="Name" Type="nvarchar(max)" Nullable="false" />
-    <Property Name="BattleHour" Type="time" Nullable="false" Precision="7" />
-    <Property Name="Event_idEvent" Type="int" Nullable="false" />
-  </EntityType>
-  <EntityType Name="Event">
-    <Key>
-      <PropertyRef Name="idEvent" />
-    </Key>
-    <Property Name="idEvent" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="Name" Type="nvarchar(max)" Nullable="false" />
-    <Property Name="EventDate" Type="datetime" Nullable="false" />
-  </EntityType>
-  <EntityType Name="Instrument">
-    <Key>
-      <PropertyRef Name="idInstrument" />
-    </Key>
-    <Property Name="idInstrument" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="InstrumentType" Type="nvarchar(max)" Nullable="false" />
-    <Property Name="Music_idMusic" Type="int" Nullable="false" />
-    <Property Name="Member_idMember" Type="int" Nullable="false" />
-  </EntityType>
-  <EntityType Name="Member">
-    <Key>
-      <PropertyRef Name="idMember" />
-    </Key>
-    <Property Name="idMember" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="Name" Type="nvarchar(max)" Nullable="false" />
-    <Property Name="CPF" Type="nvarchar(max)" Nullable="false" />
-    <Property Name="BirthDate" Type="datetime" Nullable="false" />
-    <Property Name="Artist_idArtist" Type="int" Nullable="false" />
-  </EntityType>
-  <EntityType Name="Music">
-    <Key>
-      <PropertyRef Name="idMusic" />
-    </Key>
-    <Property Name="idMusic" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="Title" Type="nvarchar(max)" Nullable="false" />
-    <Property Name="MusicLength" Type="time" Nullable="false" Precision="7" />
-    <Property Name="Genre" Type="nvarchar(max)" Nullable="false" />
-  </EntityType>
-  <Association Name="FK_ArtistArtist_has_Competition">
-    <End Role="Artist" Type="CompeticaoDBModel.Store.Artist" Multiplicity="1" />
-    <End Role="Artist_has_Competition" Type="CompeticaoDBModel.Store.Artist_has_Competition" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="Artist">
-        <PropertyRef Name="idArtist" />
-      </Principal>
-      <Dependent Role="Artist_has_Competition">
-        <PropertyRef Name="Artist_idArtist" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="FK_ArtistArtist_has_Music">
-    <End Role="Artist" Type="CompeticaoDBModel.Store.Artist" Multiplicity="1" />
-    <End Role="Artist_has_Music" Type="CompeticaoDBModel.Store.Artist_has_Music" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="Artist">
-        <PropertyRef Name="idArtist" />
-      </Principal>
-      <Dependent Role="Artist_has_Music">
-        <PropertyRef Name="Artist_idArtist" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="FK_ArtistMember">
-    <End Role="Artist" Type="CompeticaoDBModel.Store.Artist" Multiplicity="1" />
-    <End Role="Member" Type="CompeticaoDBModel.Store.Member" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="Artist">
-        <PropertyRef Name="idArtist" />
-      </Principal>
-      <Dependent Role="Member">
-        <PropertyRef Name="Artist_idArtist" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="FK_BattleArtist_has_Competition">
-    <End Role="Battle" Type="CompeticaoDBModel.Store.Battle" Multiplicity="1" />
-    <End Role="Artist_has_Competition" Type="CompeticaoDBModel.Store.Artist_has_Competition" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="Battle">
-        <PropertyRef Name="idBattle" />
-      </Principal>
-      <Dependent Role="Artist_has_Competition">
-        <PropertyRef Name="Battle_idBattle" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="FK_MusicArtist_has_Music">
-    <End Role="Music" Type="CompeticaoDBModel.Store.Music" Multiplicity="1" />
-    <End Role="Artist_has_Music" Type="CompeticaoDBModel.Store.Artist_has_Music" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="Music">
-        <PropertyRef Name="idMusic" />
-      </Principal>
-      <Dependent Role="Artist_has_Music">
-        <PropertyRef Name="Music_idMusic" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="FK_EventBattle">
-    <End Role="Event" Type="CompeticaoDBModel.Store.Event" Multiplicity="1" />
-    <End Role="Battle" Type="CompeticaoDBModel.Store.Battle" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="Event">
-        <PropertyRef Name="idEvent" />
-      </Principal>
-      <Dependent Role="Battle">
-        <PropertyRef Name="Event_idEvent" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="FK_MemberInstrument">
-    <End Role="Member" Type="CompeticaoDBModel.Store.Member" Multiplicity="1" />
-    <End Role="Instrument" Type="CompeticaoDBModel.Store.Instrument" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="Member">
-        <PropertyRef Name="idMember" />
-      </Principal>
-      <Dependent Role="Instrument">
-        <PropertyRef Name="Member_idMember" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="FK_MusicInstrument">
-    <End Role="Music" Type="CompeticaoDBModel.Store.Music" Multiplicity="1" />
-    <End Role="Instrument" Type="CompeticaoDBModel.Store.Instrument" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="Music">
-        <PropertyRef Name="idMusic" />
-      </Principal>
-      <Dependent Role="Instrument">
-        <PropertyRef Name="Music_idMusic" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-</Schema></edmx:StorageModels>
+      <Schema Namespace="CompeticaoDBModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Artist">
+          <Key>
+            <PropertyRef Name="idArtist" />
+          </Key>
+          <Property Name="idArtist" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="FormationYear" Type="nvarchar(max)" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Artist_has_Competition">
+          <Key>
+            <PropertyRef Name="idArtist_has_Competition" />
+          </Key>
+          <Property Name="Artist_idArtist" Type="int" Nullable="false" />
+          <Property Name="Battle_idBattle" Type="int" Nullable="false" />
+          <Property Name="idArtist_has_Competition" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Artist_has_Music">
+          <Key>
+            <PropertyRef Name="idArtist_has_Music" />
+          </Key>
+          <Property Name="Artist_idArtist" Type="int" Nullable="false" />
+          <Property Name="Music_idMusic" Type="int" Nullable="false" />
+          <Property Name="idArtist_has_Music" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Battle">
+          <Key>
+            <PropertyRef Name="idBattle" />
+          </Key>
+          <Property Name="idBattle" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="BattleHour" Type="time" Precision="7" Nullable="false" />
+          <Property Name="Event_idEvent" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Event">
+          <Key>
+            <PropertyRef Name="idEvent" />
+          </Key>
+          <Property Name="idEvent" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="EventDate" Type="datetime" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Instrument">
+          <Key>
+            <PropertyRef Name="idInstrument" />
+          </Key>
+          <Property Name="idInstrument" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="InstrumentType" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="Music_idMusic" Type="int" Nullable="false" />
+          <Property Name="Member_idMember" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Member">
+          <Key>
+            <PropertyRef Name="idMember" />
+          </Key>
+          <Property Name="idMember" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="CPF" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="BirthDate" Type="datetime" Nullable="false" />
+          <Property Name="Artist_idArtist" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Music">
+          <Key>
+            <PropertyRef Name="idMusic" />
+          </Key>
+          <Property Name="idMusic" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Title" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="MusicLength" Type="time" Precision="7" Nullable="false" />
+          <Property Name="Genre" Type="nvarchar(max)" Nullable="false" />
+        </EntityType>
+        <Association Name="FK_ArtistArtist_has_Competition">
+          <End Role="Artist" Type="Self.Artist" Multiplicity="1" />
+          <End Role="Artist_has_Competition" Type="Self.Artist_has_Competition" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Artist">
+              <PropertyRef Name="idArtist" />
+            </Principal>
+            <Dependent Role="Artist_has_Competition">
+              <PropertyRef Name="Artist_idArtist" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ArtistArtist_has_Music">
+          <End Role="Artist" Type="Self.Artist" Multiplicity="1" />
+          <End Role="Artist_has_Music" Type="Self.Artist_has_Music" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Artist">
+              <PropertyRef Name="idArtist" />
+            </Principal>
+            <Dependent Role="Artist_has_Music">
+              <PropertyRef Name="Artist_idArtist" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ArtistMember">
+          <End Role="Artist" Type="Self.Artist" Multiplicity="1" />
+          <End Role="Member" Type="Self.Member" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Artist">
+              <PropertyRef Name="idArtist" />
+            </Principal>
+            <Dependent Role="Member">
+              <PropertyRef Name="Artist_idArtist" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_BattleArtist_has_Competition">
+          <End Role="Battle" Type="Self.Battle" Multiplicity="1" />
+          <End Role="Artist_has_Competition" Type="Self.Artist_has_Competition" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Battle">
+              <PropertyRef Name="idBattle" />
+            </Principal>
+            <Dependent Role="Artist_has_Competition">
+              <PropertyRef Name="Battle_idBattle" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_EventBattle">
+          <End Role="Event" Type="Self.Event" Multiplicity="1" />
+          <End Role="Battle" Type="Self.Battle" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Event">
+              <PropertyRef Name="idEvent" />
+            </Principal>
+            <Dependent Role="Battle">
+              <PropertyRef Name="Event_idEvent" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_MemberInstrument">
+          <End Role="Member" Type="Self.Member" Multiplicity="1" />
+          <End Role="Instrument" Type="Self.Instrument" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Member">
+              <PropertyRef Name="idMember" />
+            </Principal>
+            <Dependent Role="Instrument">
+              <PropertyRef Name="Member_idMember" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_MusicArtist_has_Music">
+          <End Role="Music" Type="Self.Music" Multiplicity="1" />
+          <End Role="Artist_has_Music" Type="Self.Artist_has_Music" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Music">
+              <PropertyRef Name="idMusic" />
+            </Principal>
+            <Dependent Role="Artist_has_Music">
+              <PropertyRef Name="Music_idMusic" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_MusicInstrument">
+          <End Role="Music" Type="Self.Music" Multiplicity="1" />
+          <End Role="Instrument" Type="Self.Instrument" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Music">
+              <PropertyRef Name="idMusic" />
+            </Principal>
+            <Dependent Role="Instrument">
+              <PropertyRef Name="Music_idMusic" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="CompeticaoDBModelStoreContainer">
+          <EntitySet Name="Artist" EntityType="Self.Artist" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Artist_has_Competition" EntityType="Self.Artist_has_Competition" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Artist_has_Music" EntityType="Self.Artist_has_Music" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Battle" EntityType="Self.Battle" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Event" EntityType="Self.Event" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Instrument" EntityType="Self.Instrument" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Member" EntityType="Self.Member" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Music" EntityType="Self.Music" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK_ArtistArtist_has_Competition" Association="Self.FK_ArtistArtist_has_Competition">
+            <End Role="Artist" EntitySet="Artist" />
+            <End Role="Artist_has_Competition" EntitySet="Artist_has_Competition" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ArtistArtist_has_Music" Association="Self.FK_ArtistArtist_has_Music">
+            <End Role="Artist" EntitySet="Artist" />
+            <End Role="Artist_has_Music" EntitySet="Artist_has_Music" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ArtistMember" Association="Self.FK_ArtistMember">
+            <End Role="Artist" EntitySet="Artist" />
+            <End Role="Member" EntitySet="Member" />
+          </AssociationSet>
+          <AssociationSet Name="FK_BattleArtist_has_Competition" Association="Self.FK_BattleArtist_has_Competition">
+            <End Role="Battle" EntitySet="Battle" />
+            <End Role="Artist_has_Competition" EntitySet="Artist_has_Competition" />
+          </AssociationSet>
+          <AssociationSet Name="FK_EventBattle" Association="Self.FK_EventBattle">
+            <End Role="Event" EntitySet="Event" />
+            <End Role="Battle" EntitySet="Battle" />
+          </AssociationSet>
+          <AssociationSet Name="FK_MemberInstrument" Association="Self.FK_MemberInstrument">
+            <End Role="Member" EntitySet="Member" />
+            <End Role="Instrument" EntitySet="Instrument" />
+          </AssociationSet>
+          <AssociationSet Name="FK_MusicArtist_has_Music" Association="Self.FK_MusicArtist_has_Music">
+            <End Role="Music" EntitySet="Music" />
+            <End Role="Artist_has_Music" EntitySet="Artist_has_Music" />
+          </AssociationSet>
+          <AssociationSet Name="FK_MusicInstrument" Association="Self.FK_MusicInstrument">
+            <End Role="Music" EntitySet="Music" />
+            <End Role="Instrument" EntitySet="Instrument" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="CompeticaoDBModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
@@ -443,87 +444,88 @@
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
     <edmx:Mappings>
-    <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-  <EntityContainerMapping StorageEntityContainer="CompeticaoDBModelStoreContainer" CdmEntityContainer="CompeticaoDB">
-    <EntitySetMapping Name="Artist">
-      <EntityTypeMapping TypeName="IsTypeOf(CompeticaoDBModel.Artist)">
-        <MappingFragment StoreEntitySet="Artist">
-          <ScalarProperty Name="idArtist" ColumnName="idArtist" />
-          <ScalarProperty Name="Name" ColumnName="Name" />
-          <ScalarProperty Name="FormationYear" ColumnName="FormationYear" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
-    <EntitySetMapping Name="Artist_has_Competition">
-      <EntityTypeMapping TypeName="IsTypeOf(CompeticaoDBModel.Artist_has_Competition)">
-        <MappingFragment StoreEntitySet="Artist_has_Competition">
-          <ScalarProperty Name="idArtist_has_Competition" ColumnName="idArtist_has_Competition" />
-          <ScalarProperty Name="Artist_idArtist" ColumnName="Artist_idArtist" />
-          <ScalarProperty Name="Battle_idBattle" ColumnName="Battle_idBattle" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
-    <EntitySetMapping Name="Artist_has_Music">
-      <EntityTypeMapping TypeName="IsTypeOf(CompeticaoDBModel.Artist_has_Music)">
-        <MappingFragment StoreEntitySet="Artist_has_Music">
-          <ScalarProperty Name="idArtist_has_Music" ColumnName="idArtist_has_Music" />
-          <ScalarProperty Name="Artist_idArtist" ColumnName="Artist_idArtist" />
-          <ScalarProperty Name="Music_idMusic" ColumnName="Music_idMusic" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
-    <EntitySetMapping Name="Battle">
-      <EntityTypeMapping TypeName="IsTypeOf(CompeticaoDBModel.Battle)">
-        <MappingFragment StoreEntitySet="Battle">
-          <ScalarProperty Name="idBattle" ColumnName="idBattle" />
-          <ScalarProperty Name="Name" ColumnName="Name" />
-          <ScalarProperty Name="BattleHour" ColumnName="BattleHour" />
-          <ScalarProperty Name="Event_idEvent" ColumnName="Event_idEvent" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
-    <EntitySetMapping Name="Event">
-      <EntityTypeMapping TypeName="IsTypeOf(CompeticaoDBModel.Event)">
-        <MappingFragment StoreEntitySet="Event">
-          <ScalarProperty Name="idEvent" ColumnName="idEvent" />
-          <ScalarProperty Name="Name" ColumnName="Name" />
-          <ScalarProperty Name="EventDate" ColumnName="EventDate" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
-    <EntitySetMapping Name="Instrument">
-      <EntityTypeMapping TypeName="IsTypeOf(CompeticaoDBModel.Instrument)">
-        <MappingFragment StoreEntitySet="Instrument">
-          <ScalarProperty Name="idInstrument" ColumnName="idInstrument" />
-          <ScalarProperty Name="InstrumentType" ColumnName="InstrumentType" />
-          <ScalarProperty Name="Music_idMusic" ColumnName="Music_idMusic" />
-          <ScalarProperty Name="Member_idMember" ColumnName="Member_idMember" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
-    <EntitySetMapping Name="Member">
-      <EntityTypeMapping TypeName="IsTypeOf(CompeticaoDBModel.Member)">
-        <MappingFragment StoreEntitySet="Member">
-          <ScalarProperty Name="idMember" ColumnName="idMember" />
-          <ScalarProperty Name="Name" ColumnName="Name" />
-          <ScalarProperty Name="CPF" ColumnName="CPF" />
-          <ScalarProperty Name="BirthDate" ColumnName="BirthDate" />
-          <ScalarProperty Name="Artist_idArtist" ColumnName="Artist_idArtist" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
-    <EntitySetMapping Name="Music">
-      <EntityTypeMapping TypeName="IsTypeOf(CompeticaoDBModel.Music)">
-        <MappingFragment StoreEntitySet="Music">
-          <ScalarProperty Name="idMusic" ColumnName="idMusic" />
-          <ScalarProperty Name="Title" ColumnName="Title" />
-          <ScalarProperty Name="MusicLength" ColumnName="MusicLength" />
-          <ScalarProperty Name="Genre" ColumnName="Genre" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
-  </EntityContainerMapping>
-</Mapping></edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="CompeticaoDBModelStoreContainer" CdmEntityContainer="CompeticaoDB">
+          <EntitySetMapping Name="Artist">
+            <EntityTypeMapping TypeName="CompeticaoDBModel.Artist">
+              <MappingFragment StoreEntitySet="Artist">
+                <ScalarProperty Name="idArtist" ColumnName="idArtist" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="FormationYear" ColumnName="FormationYear" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Artist_has_Competition">
+            <EntityTypeMapping TypeName="CompeticaoDBModel.Artist_has_Competition">
+              <MappingFragment StoreEntitySet="Artist_has_Competition">
+                <ScalarProperty Name="Artist_idArtist" ColumnName="Artist_idArtist" />
+                <ScalarProperty Name="Battle_idBattle" ColumnName="Battle_idBattle" />
+                <ScalarProperty Name="idArtist_has_Competition" ColumnName="idArtist_has_Competition" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Artist_has_Music">
+            <EntityTypeMapping TypeName="CompeticaoDBModel.Artist_has_Music">
+              <MappingFragment StoreEntitySet="Artist_has_Music">
+                <ScalarProperty Name="Artist_idArtist" ColumnName="Artist_idArtist" />
+                <ScalarProperty Name="Music_idMusic" ColumnName="Music_idMusic" />
+                <ScalarProperty Name="idArtist_has_Music" ColumnName="idArtist_has_Music" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Battle">
+            <EntityTypeMapping TypeName="CompeticaoDBModel.Battle">
+              <MappingFragment StoreEntitySet="Battle">
+                <ScalarProperty Name="idBattle" ColumnName="idBattle" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="BattleHour" ColumnName="BattleHour" />
+                <ScalarProperty Name="Event_idEvent" ColumnName="Event_idEvent" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Event">
+            <EntityTypeMapping TypeName="CompeticaoDBModel.Event">
+              <MappingFragment StoreEntitySet="Event">
+                <ScalarProperty Name="idEvent" ColumnName="idEvent" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="EventDate" ColumnName="EventDate" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Instrument">
+            <EntityTypeMapping TypeName="CompeticaoDBModel.Instrument">
+              <MappingFragment StoreEntitySet="Instrument">
+                <ScalarProperty Name="idInstrument" ColumnName="idInstrument" />
+                <ScalarProperty Name="InstrumentType" ColumnName="InstrumentType" />
+                <ScalarProperty Name="Music_idMusic" ColumnName="Music_idMusic" />
+                <ScalarProperty Name="Member_idMember" ColumnName="Member_idMember" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Member">
+            <EntityTypeMapping TypeName="CompeticaoDBModel.Member">
+              <MappingFragment StoreEntitySet="Member">
+                <ScalarProperty Name="idMember" ColumnName="idMember" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="CPF" ColumnName="CPF" />
+                <ScalarProperty Name="BirthDate" ColumnName="BirthDate" />
+                <ScalarProperty Name="Artist_idArtist" ColumnName="Artist_idArtist" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Music">
+            <EntityTypeMapping TypeName="CompeticaoDBModel.Music">
+              <MappingFragment StoreEntitySet="Music">
+                <ScalarProperty Name="idMusic" ColumnName="idMusic" />
+                <ScalarProperty Name="Title" ColumnName="Title" />
+                <ScalarProperty Name="MusicLength" ColumnName="MusicLength" />
+                <ScalarProperty Name="Genre" ColumnName="Genre" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
   </edmx:Runtime>
   <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
   <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
@@ -537,7 +539,7 @@
         <DesignerProperty Name="ValidateOnBuild" Value="true" />
         <DesignerProperty Name="EnablePluralization" Value="false" />
         <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
-        <DesignerProperty Name="UseLegacyProvider" Value="False" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
         <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
       </DesignerInfoPropertySet>
     </Options>
